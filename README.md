@@ -16,21 +16,21 @@ The `config/` directory houses code that, as you can guess, configures your app.
 
 #### `environment.rb`
 
-Think of `environment.rb` as a manifest for all of your files. It should require all of your executable code (like what's in `lib/`). In turn, other code that executes it should require `environment.rb`; it's easier and cleaner to require just this one file everything then continuously updating whenever you add a new class.
+Think of `environment.rb` as a manifest for all of your files. It should require all of your executable code (like what's in `lib/`). In turn, other code that executes it should require `environment.rb`; it's easier and cleaner to require just this one file with everything than continuously updating whenever you add a new class.
 
-Below we'll talk about what should be requiring `environment.rb`.
+Below, we'll talk about what should be requiring `environment.rb`.
 
 To pass the tests, make an `environment.rb` file and have it require the code in `lib/`.
 
 ### `bin/`
 
-The `bin/` directory holds files that work to execute your code. Where you code is defined should always be separate from where it's executed.
+The `bin/` directory holds files that work to execute your code. Where your code is defined should always be separate from where it's executed.
 
 Create a file called `run.rb` which runs the `Foo` class. Be sure that it requires `environment.rb`, so that it knows about `Foo` and `Bar`.
 
 ### `spec/`
 
-You should already be familiar with what's going on in `spec/`, but let's dive in to what's happening within this folder a bit more. File(s) that hold tests end in "_spec" (like `file_structure_spec.rb`). Note that this is requiring a file called `spec_helper.rb`, which does two things: holds configuration settings that apply to any spec file that requires it, and requires `environment.rb`, so it knows about the code that its testing.
+You should already be familiar with what's going on in `spec/`, but let's dive in to what's happening within this folder a bit more. File(s) that hold tests end in "_spec" (like `file_structure_spec.rb`). Note that this is requiring a file called `spec_helper.rb`, which does two things: holds configuration settings that apply to any spec file that requires it, and requires `environment.rb`, so it knows about the code that it's testing.
 
 Get the tests to pass!
 
